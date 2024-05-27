@@ -8,21 +8,13 @@
       type="button"
       @click="toggleNavbar()"
     >
-      <svg
-        class="size-6 fill-blue-600 group-hover:fill-white"
-        :class="btn_toggle_class"
-      >
+      <svg class="size-6 fill-blue-600 group-hover:fill-white" :class="btn_toggle_class">
         <use :xlink:href="btn_toggle_xlink_href"></use>
       </svg>
     </button>
 
     <div class="text-center">
-      <a
-        class="text-2xl uppercase tracking-widest lg:text-3xl"
-        style="line-height: 1"
-        href="index.html"
-        >practice</a
-      >
+      <a class="text-2xl uppercase tracking-widest lg:text-3xl" style="line-height: 1" href="index.html">practice</a>
     </div>
 
     <div class="lg:flex lg:justify-center lg:items-center px-3">
@@ -37,11 +29,10 @@
             :to="{ name: 'home', hash: '#home' }"
             :class="[
               {
-                'link-active':
-                  activeSection === '/#home' || activeSection === '/',
+                'link-active': activeSection === '/#home' || activeSection === '/',
               },
             ]"
-            class="py-3 px-3 transition-all duration-300"
+            class="py-3 px-3"
             >HOME</router-link
           >
         </li>
@@ -50,10 +41,10 @@
           @click.prevent="setActiveSection()"
         >
           <router-link
-            :to="{ name: 'home', hash: '#service' }"
-            :class="[{ 'link-active': activeSection === '/#service' }]"
-            class="py-3 px-3 transition-all duration-300"
-            >SERVICE</router-link
+            :to="{ name: 'home', hash: '#marquee' }"
+            :class="[{ 'link-active': activeSection === '/#marquee' }]"
+            class="py-3 px-3"
+            >MARQUEE</router-link
           >
         </li>
         <li
@@ -61,10 +52,10 @@
           @click.prevent="setActiveSection()"
         >
           <router-link
-            :to="{ name: 'home', hash: '#featured-cars' }"
-            :class="[{ 'link-active': activeSection === '/#featured-cars' }]"
-            class="py-3 px-3 transition-all duration-300"
-            >FEATURED CARS</router-link
+            :to="{ name: 'home', hash: '#home' }"
+            :class="[{ 'link-active': activeSection === '/#home' }]"
+            class="py-3 px-3"
+            >COMING SOON</router-link
           >
         </li>
         <li
@@ -72,10 +63,10 @@
           @click.prevent="setActiveSection()"
         >
           <router-link
-            :to="{ name: 'home', hash: '#new-cars' }"
-            :class="[{ 'link-active': activeSection === '/#new-cars' }]"
-            class="py-3 px-3 transition-all duration-300"
-            >NEW CARS</router-link
+            :to="{ name: 'home', hash: '#home' }"
+            :class="[{ 'link-active': activeSection === '/#home' }]"
+            class="py-3 px-3"
+            >COMING SOON</router-link
           >
         </li>
         <li
@@ -83,21 +74,10 @@
           @click.prevent="setActiveSection()"
         >
           <router-link
-            :to="{ name: 'home', hash: '#brands' }"
-            :class="[{ 'link-active': activeSection === '/#brands' }]"
-            class="py-3 px-3 transition-all duration-300"
-            >BRANDS</router-link
-          >
-        </li>
-        <li
-          class="flex hover:bg-slate-100 hover:bg-opacity-10 hover:text-blue-600 hover:cursor-pointer transition-all duration-300 lg:hover:bg-transparent lg:duration-500"
-          @click.prevent="setActiveSection()"
-        >
-          <router-link
-            :to="{ name: 'home', hash: '#contact' }"
-            :class="[{ 'link-active': activeSection === '/#contact' }]"
-            class="py-3 px-3 transition-all duration-300"
-            >CONTACT</router-link
+            :to="{ name: 'home', hash: '#home' }"
+            :class="[{ 'link-active': activeSection === '/#home' }]"
+            class="py-3 px-3"
+            >COMING SOON</router-link
           >
         </li>
       </ul>
@@ -140,14 +120,7 @@ function setActiveSection() {
 
 const handleResizeAndScroll = () => {
   if (!isManualScrolling.value) return;
-  const sections = [
-    "home",
-    "service",
-    "featured-cars",
-    "new-cars",
-    "brands",
-    "contact",
-  ];
+  const sections = ["home", "service", "featured-cars", "new-cars", "brands", "contact"];
   const currentSection = sections.find((section) => {
     const el = document.getElementById(section);
     if (el) {

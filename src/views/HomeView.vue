@@ -1,25 +1,34 @@
 <template>
   <main class="pt-16 h-screen w-screen bg-slate-200">
-    <section class="bg-slate-300 py-8">
-      <AppMarquee
-        class="h-64 py-4"
-        v-slot="slotProps"
-        :data="data"
-        :itemsWidth="500"
-      >
-        <div class="h-64 rounded-md bg-slate-900" :style="slotProps.itemStyle">
+    <section id="marquee" class="bg-slate-300 py-8">
+      <AppMarquee class="h-28 flex items-center" v-slot="slotProps" :data="data" :itemsWidth="400">
+        <div
+          class="h-24 rounded-md border-4 border-gray-800 p-2 flex justify-center items-center"
+          :style="slotProps.itemStyle"
+        >
           {{ slotProps.item }}
         </div>
       </AppMarquee>
 
       <AppMarquee
-        class="h-64 py-4"
+        class="h-28 flex items-center"
         v-slot="slotProps"
         :data="data"
-        :itemsWidth="500"
+        :itemsWidth="400"
         :scrollDirection="'right'"
       >
-        <div class="h-64 rounded-md bg-slate-900" :style="slotProps.itemStyle">
+        <div
+          class="h-24 rounded-md border-4 border-gray-800 p-2 flex justify-center items-center"
+          :style="slotProps.itemStyle"
+        >
+          {{ slotProps.item }}
+        </div>
+      </AppMarquee>
+      <AppMarquee class="h-28 flex items-center" v-slot="slotProps" :data="data" :itemsWidth="400" :delayDuration="25">
+        <div
+          class="h-24 rounded-md border-4 border-gray-800 p-2 flex justify-center items-center"
+          :style="slotProps.itemStyle"
+        >
           {{ slotProps.item }}
         </div>
       </AppMarquee>
@@ -30,5 +39,5 @@
 <script lang="ts" setup>
 import AppMarquee from "../components/AppMarquee.vue";
 
-const data = [1, 2, 3, 4, 5];
+const data = [1, 2, 3, 4, 5, 6, 7, 8];
 </script>
